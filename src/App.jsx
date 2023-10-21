@@ -6,12 +6,14 @@ import Home from "./pages/home/Home";
 import Cart from "./pages/cart/Cart";
 import SingleProduct from "./components/singleProduct/SingleProduct";
 import PageNotFound from "./components/pageNotFound/PageNotFound";
+import Navbar from "./components/navbar/Navbar";
 
 
 function App() {
   return (
     <>
       <BrowserRouter>
+      <Navbar/>
         <Routes>
          <Route path="/" element={<Home/>}/>
           <Route path="login" element={<Login />} />
