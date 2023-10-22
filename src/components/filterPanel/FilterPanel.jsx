@@ -1,13 +1,17 @@
-import axios from 'axios';
+
+import apiClient from "../../services/api-client"
 import React, { useEffect, useState } from 'react'
 
 const FilterPanel = () => {
-  const [category , setCategory] = useState([]);
 
   useEffect(()=>{
-  axios.get("https://real-time-amazon-data.p.rapidapi.com/product-reviews")
-  .then(response=>response.data)
-  .then(data=>setCategory(data));
+  //   apiClient.get("/product-category-list")
+  // .then(response=>response.data)
+  // .then(data=>setCategory(data.data))
+  // .catch(){
+    
+  // }
+  
   },[])
   console.log(category);
   
