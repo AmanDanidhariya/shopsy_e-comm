@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductCard = ({ img, name, price, type }) => {
+const ProductCard = ({ img, name, price, type, colors }) => {
   return (
     <>
       <div className="card w-80 glass bg-indigo-200 m-4">
@@ -15,7 +15,19 @@ const ProductCard = ({ img, name, price, type }) => {
             <div className="text-2xl text-green-600 font-bold mt-2">
               ${price}
             </div>
-            <button className="btn btn-primary">Add to cart</button>
+            {/* <button className="btn btn-primary ">Add to cart</button> */}
+            <div className="flex gap-6 mt-4">
+            {/* listing cloth color  availibility*/}
+              {colors?.map((color, index) => {
+                return (
+                  <span
+                    className="w-4 h-4 rounded-full "
+                    key={index}
+                    style={{ backgroundColor: color }}
+                  ></span>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

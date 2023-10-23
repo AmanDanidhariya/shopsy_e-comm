@@ -30,6 +30,7 @@ const Products = () => {
               name={product.name}
               price={product.price}
               text={product.text}
+              colors={product.color}
             />
           </>
         );
