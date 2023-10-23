@@ -1,9 +1,8 @@
-import React from 'react'
-
+import { storeData } from "../../assets/data/dummyData";
 const Products = () => {
-  return (
-    <div>Products</div>
-  )
-}
+  console.log(storeData);
 
-export default Products
+  return <div>Products</div>;
+};
+
+export default Products;

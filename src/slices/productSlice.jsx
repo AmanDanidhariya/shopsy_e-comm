@@ -1,10 +1,20 @@
-import { configureStore } from "@reduxjs/toolkit";
+import {  createSlice } from "@reduxjs/toolkit";
 
 
-const store=configureStore({
-    reducers:{
+const initialState = {
+  loading: false,
+  products: [],
+  error: "",
+};
 
-    }
-})
 
-export default store;
+
+export const productSlice = createSlice({
+  name: "products",
+  initialState,
+  reducers:{},
+
+});
+
+// export const () = productSlice.actions;
+export default productSlice.reducer;
