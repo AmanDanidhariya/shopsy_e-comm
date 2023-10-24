@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import ProductCard from "../productCard/ProductCard";
+import React from "react";
 
 const Products = () => {
   const products = useSelector((state) => state.products.products);
@@ -23,8 +24,9 @@ const Products = () => {
     <div className="flex flex-wrap ">
       {products.map((product) => {
         return (
-          <>
+          <React.Fragment key={product.id}>
             <ProductCard
+              id={product.id}
               type={product.type}
               img={product.img}
               name={product.name}
@@ -32,7 +34,7 @@ const Products = () => {
               text={product.text}
               colors={product.color}
             />
-          </>
+          </React.Fragment>
         );
       })}
     </div>

@@ -1,9 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
-const ProductCard = ({ img, name, price, type, colors }) => {
+const ProductCard = ({ id, img, name, price, type, colors }) => {
+  const dispatch = useDispatch();
+
   return (
-    <>
-      <div className="card w-80 glass bg-indigo-200 m-4">
+    <Link to={`/product/${id}`}>
+      <div
+        className="card w-80 glass bg-indigo-200 m-4"
+      >
         <figure>
           <img className="h-56 w-full" src={img} alt={name} />
         </figure>
@@ -17,7 +23,7 @@ const ProductCard = ({ img, name, price, type, colors }) => {
             </div>
             {/* <button className="btn btn-primary ">Add to cart</button> */}
             <div className="flex gap-6 mt-4">
-            {/* listing cloth color  availibility*/}
+              {/* listing cloth color  availibility*/}
               {colors?.map((color, index) => {
                 return (
                   <span
@@ -31,7 +37,7 @@ const ProductCard = ({ img, name, price, type, colors }) => {
           </div>
         </div>
       </div>
-    </>
+    </Link>
   );
 };
 

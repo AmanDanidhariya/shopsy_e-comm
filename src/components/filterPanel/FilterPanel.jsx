@@ -5,8 +5,8 @@ const FilterPanel = () => {
 
   return (
     <div className="min-w-[20%] bg-indigo-100 flex flex-col min-h-[596px] p-4 ">
-      {buttons.map((button) => (
-        <div className="flex gap-4 font-bold border-b-[2px] py-3" key={button.id}>
+      {buttons.map((button , index) => (
+        <div className="flex gap-4 font-bold border-b-[2px] py-3" key={index}>
           <label className="label cursor-pointer ">
             <input
               type="radio"

@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="icon text-3xl font-bold ml-10 text-gray-900">SHOPSY</div>
       <ul className="flex gap-14 text-lg font-bold mr-10">
       <li className="flex leading-4 gap-2  cursor-pointer hover:text-white ">
-          <NavLink to="cart">Home</NavLink>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li className="flex leading-4 gap-2  cursor-pointer hover:text-white ">
         <span><BsFillCartCheckFill/></span>

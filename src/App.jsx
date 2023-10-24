@@ -7,6 +7,7 @@ import Cart from "./pages/cart/Cart";
 import SingleProduct from "./components/singleProduct/SingleProduct";
 import PageNotFound from "./components/pageNotFound/PageNotFound";
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 
 
 function App() {
