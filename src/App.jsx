@@ -1,14 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { lazy } from "react";
 import "./App.css";
-import Login from "./pages/login/Login";
-import Signup from "./pages/signup/Signup";
-import Home from "./pages/home/Home";
-import Cart from "./pages/cart/Cart";
 import SingleProduct from "./components/singleProduct/SingleProduct";
 import PageNotFound from "./components/pageNotFound/PageNotFound";
 import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
 
+//use a lzy function for code splitting
+const Home = lazy(()=>import("./pages/home/Home"))
+const Signup = lazy(()=>import("./pages/signup/Signup"))
+const Login = lazy(()=>import("./pages/login/Login"))
+const Cart = lazy(()=>import("./pages/cart/Cart"));
 
 function App() {
   return (
