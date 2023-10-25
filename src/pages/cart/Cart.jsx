@@ -1,9 +1,10 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../../slices/cartSlice";
 
 const Cart = () => {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
-  console.log(cart);
   //id, price,size,amount,img,totalPrice,name,text,color
   return (
     <>
@@ -35,7 +36,7 @@ const Cart = () => {
                   <p className="text-2xl font-bold text-blue-900 mt-2">
                     ${item.price}
                   </p>
-                  <button className="btn btn-error hover:text-white">
+                  <button className="btn btn-error hover:text-white" onClick={()=>dispatch(removeFromCart(item))}>
                     remove
                   </button>
                 </div>

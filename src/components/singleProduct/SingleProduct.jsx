@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../slices/cartSlice";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Footer from "../footer/Footer";
 
 const SingleProduct = () => {
@@ -9,6 +9,7 @@ const SingleProduct = () => {
   const product = useSelector((state) => state.products.products);
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   //default size first in sizeArray
   const productSize = product[0].size ? product[0].size[0] : "";
@@ -97,6 +98,14 @@ const SingleProduct = () => {
             }
           >
             Add to cart
+          </button>
+          <button
+            className="btn btn-neutral w-[100px]"
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
+            Go Back
           </button>
         </div>
       </div>

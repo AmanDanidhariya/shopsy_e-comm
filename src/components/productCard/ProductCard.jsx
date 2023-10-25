@@ -1,15 +1,9 @@
-import React from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ id, img, name, price, type, colors }) => {
-  const dispatch = useDispatch();
-
   return (
     <Link to={`/product/${id}`}>
-      <div
-        className="card w-80 glass bg-indigo-200 m-4"
-      >
+      <div className="card w-80 glass bg-indigo-200 m-4">
         <figure>
           <img className="h-56 w-full" src={img} alt={name} />
         </figure>

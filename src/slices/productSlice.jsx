@@ -2,8 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import { storeData } from "../assets/data/dummyData";
 
 const initialState = {
-  loading: false,
   products: storeData,
+  filterProducts: [],
+  //for filter radio buttons
   filterButtons: [
     "Hoodies",
     "Dresses",
@@ -13,14 +14,25 @@ const initialState = {
     "Jackets",
     "Bags",
   ],
-  error: "",
 };
 
 export const productSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    filterProducts(state, action) {
+      try {
+        //filter Data according to filterButton
+        const filter = storeData.filter(
+          (product) => product.type === action.payload
+        );
+        state.filterProducts = filter;
+      } catch (error) {
+        return error;
+      }
+    },
+  },
 });
 
-export const { setProducts } = productSlice.actions;
+export const { filterProducts } = productSlice.actions;
 export default productSlice.reducer;
