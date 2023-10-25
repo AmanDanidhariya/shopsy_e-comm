@@ -8,7 +8,7 @@ const Cart = () => {
   //id, price,size,amount,img,totalPrice,name,text,color
   return (
     <>
-      <div className="flex flex-wrap p-4">
+      <div className="flex flex-wrap p-4 h-screen ">
         {cart.map((item) => {
           const color = item.color;
           return (
@@ -45,7 +45,7 @@ const Cart = () => {
           );
         })}
       </div>
-      <div className="text-3xl font-bold text-center border-t-[10px] ">
+      <div className="text-3xl font-bold text-center border-neutral-900 border-t-[10px] pb-6">
         <span className="text-black">TotalPrice :- </span>
         <span className="text-blue-950">$ {totalPrice}</span>
       </div>

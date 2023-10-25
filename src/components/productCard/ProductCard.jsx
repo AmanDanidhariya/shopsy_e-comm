@@ -5,7 +5,7 @@ const ProductCard = ({ id, img, name, price, type, colors }) => {
     <Link to={`/product/${id}`}>
       <div className="card w-80 glass bg-indigo-200 m-4">
         <figure>
-          <img className="h-56 w-full" src={img} alt={name} />
+          <img className="h-56 w-full bg-cover" src={img} alt={name} />
         </figure>
         <div className="card-body">
           <h2 className="card-title text-indigo-900">{name}</h2>
@@ -17,7 +17,7 @@ const ProductCard = ({ id, img, name, price, type, colors }) => {
             </div>
             {/* <button className="btn btn-primary ">Add to cart</button> */}
             <div className="flex gap-6 mt-4">
-              {/* listing cloth color  availibility*/}
+              {/* listing cloth color  availability*/}
               {colors?.map((color, index) => {
                 return (
                   <span

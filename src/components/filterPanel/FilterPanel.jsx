@@ -14,7 +14,7 @@ const FilterPanel = () => {
             <input
               type="radio"
               name="radio-10"
-              className="radio-sm checked:bg-blue-500"
+              className="radio-sm checked:bg-blue-500 cursor-pointer"
               onClick={()=>{dispatch(filterProducts(button))}}
             />
           </label>

@@ -4,6 +4,10 @@ import { storeData } from "../assets/data/dummyData";
 const initialState = {
   products: storeData,
   filterProducts: [],
+  //current page number
+  currentPage:1,
+  //items per page
+  itemsPerPage:6,
   //for filter radio buttons
   filterButtons: [
     "Hoodies",
@@ -31,8 +35,11 @@ export const productSlice = createSlice({
         return error;
       }
     },
+    changePage(state , action){
+      state.currentPage = action.payload;
+    }
   },
 });
 
-export const { filterProducts } = productSlice.actions;
+export const { filterProducts , changePage} = productSlice.actions;
 export default productSlice.reducer;
