@@ -17,8 +17,8 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="login" element={<Login />} />
+          <Route index element={<Login />} />
+          <Route path="home" element={<Home />} />
           <Route path="signup" element={<Signup />} />
           <Route path="cart" element={<Cart />} />
           <Route path="/product/:id" element={<SingleProduct />} />
