@@ -12,7 +12,7 @@ const schema = Joi.object({
 });
 
 const Signup = () => {
-  const navigate= useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const defaultValue = {
     name: "",
@@ -49,7 +49,7 @@ const Signup = () => {
       if (user) {
         dispatch(setUser(user));
       }
-      navigate("/")
+      navigate("/");
       // Clear previous validation errors
       setErrors({});
     }
@@ -79,11 +79,12 @@ const Signup = () => {
                 value={values.name}
                 onChange={onChange}
               />
-              {errors.name && <span className="text-red-500 font-bold ">{errors.name}</span>}
+              {errors.name && (
+                <span className="text-red-500 font-bold ">{errors.name}</span>
+              )}
             </div>
-            
           </div>
-          
+
           {/* name field end */}
           {/* password field start */}
           <div className="md:flex md:items-center mb-6">
@@ -105,7 +106,11 @@ const Signup = () => {
                 value={values.password}
                 onChange={onChange}
               />
-              {errors.password && <span className="text-red-500 font-bold">{errors.password}</span>}
+              {errors.password && (
+                <span className="text-red-500 font-bold">
+                  {errors.password}
+                </span>
+              )}
             </div>
           </div>
           {/* password field end */}
@@ -130,7 +135,9 @@ const Signup = () => {
                 onChange={onChange}
               />
             </div>
-            {errors.image && <span className="text-red-500 font-bold">{errors.image}</span>}
+            {errors.image && (
+              <span className="text-red-500 font-bold">{errors.image}</span>
+            )}
           </div>
           {/* image field end*/}
           <div className="md:flex md:items-center">

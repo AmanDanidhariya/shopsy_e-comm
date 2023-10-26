@@ -1,7 +1,6 @@
-import { BiSolidUser } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { logout } from "../../slices/authSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const Navbar = () => {
   const dispatch = useDispatch();

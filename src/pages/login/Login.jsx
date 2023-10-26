@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Joi from "joi"
+import { useState } from "react";
+import Joi from "joi";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../slices/authSlice";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ const schema = Joi.object({
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const defaultValue = {
     name: "",
     password: "",
@@ -19,7 +19,7 @@ const Login = () => {
   //get Field values
   const [credentials, setCredentials] = useState(defaultValue);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [errorList,setErrorList ] = useState("");
+  const [errorList, setErrorList] = useState("");
   // const [errors, setErrors] = useState({});
 
   //update form values onChange
@@ -29,9 +29,8 @@ const Login = () => {
   };
 
   const handleLogin = () => {
-    const {error} = schema.validate(credentials)
+    const { error } = schema.validate(credentials);
     const existUser = JSON.parse(localStorage.getItem("user"));
-
 
     if (error) {
       // Handle validation errors
@@ -41,17 +40,16 @@ const Login = () => {
       });
       // Update the state with validation errors
       setErrorList(validationErrors);
-    } else{
+    } else {
       if (
         existUser.email === credentials.email &&
         existUser.password === credentials.password
       ) {
-        navigate("home")
+        navigate("home");
         dispatch(setUser(existUser));
-        
       } else {
         setIsLoggedIn(false);
-        setErrorList("userDoes not exist")
+        setErrorList("userDoes not exist");
       }
     }
   };
@@ -80,7 +78,11 @@ const Login = () => {
                 value={credentials.name}
                 onChange={onChange}
               />
-              {errorList.name && <span className="text-red-500 font-bold ">{errorList.name}</span>}
+              {errorList.name && (
+                <span className="text-red-500 font-bold ">
+                  {errorList.name}
+                </span>
+              )}
             </div>
           </div>
           {/* name field end */}
@@ -104,7 +106,11 @@ const Login = () => {
                 value={credentials.password}
                 onChange={onChange}
               />
-              {errorList.password && <span className="text-red-500 font-bold ">{errorList.password}</span>}
+              {errorList.password && (
+                <span className="text-red-500 font-bold ">
+                  {errorList.password}
+                </span>
+              )}
             </div>
           </div>
           {/* password field end */}
@@ -123,17 +129,19 @@ const Login = () => {
           <p className="text-center mt-3">
             if you are not Registered.{" "}
             <span>
-              <Link to="signup" className="text-indigo-600 text-lg hover:text-blue-900">
+              <Link
+                to="signup"
+                className="text-indigo-600 text-lg hover:text-blue-900"
+              >
                 Signup
               </Link>
             </span>
           </p>
         </form>
-        
       </div>
       <div className="text-center mt-4 text-black">
-          {isLoggedIn ? errorList :""}
-        </div>
+        {isLoggedIn ? errorList : ""}
+      </div>
     </>
   );
 };

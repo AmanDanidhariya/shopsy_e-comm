@@ -36,7 +36,10 @@ const Cart = () => {
                   <p className="text-2xl font-bold text-blue-900 mt-2">
                     ${item.price}
                   </p>
-                  <button className="btn btn-error hover:text-white" onClick={()=>dispatch(removeFromCart(item))}>
+                  <button
+                    className="btn btn-error hover:text-white"
+                    onClick={() => dispatch(removeFromCart(item))}
+                  >
                     remove
                   </button>
                 </div>
