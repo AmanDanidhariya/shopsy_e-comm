@@ -15,7 +15,7 @@ const Navbar = () => {
 
       <ul className="flex gap-14 text-lg font-bold mr-10">
         <li className="flex leading-4 gap-2  cursor-pointer hover:text-white ">
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/home">Home</NavLink>
         </li>
         <li className="flex leading-4 gap-2 cursor-pointer hover:text-white ">
           <NavLink to="cart">Cart</NavLink>
