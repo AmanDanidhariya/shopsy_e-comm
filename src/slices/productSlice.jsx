@@ -30,6 +30,7 @@ export const productSlice = createSlice({
         const filter = storeData.filter(
           (product) => product.type === action.payload
         );
+        //add filtered product to array
         state.filterProducts = filter;
       } catch (error) {
         return error;

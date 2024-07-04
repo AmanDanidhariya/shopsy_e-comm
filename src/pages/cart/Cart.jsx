@@ -8,9 +8,13 @@ const Cart = () => {
   //id, price,size,amount,img,totalPrice,name,text,color
   return (
     <>
-    {!cart.length ? <div className=" text-red-400 text-3xl font-bold text-center">
+      {!cart.length ? (
+        <div className=" text-red-400 text-3xl font-bold text-center">
           Add some items to your cart.
-        </div>:""}
+        </div>
+      ) : (
+        ""
+      )}
       <div className="flex flex-wrap p-4 h-screen ">
         {cart.map((item) => {
           const color = item.color;
@@ -19,7 +23,6 @@ const Cart = () => {
               className="card card-compact w-96 m-4 shadow-xl bg-gray-300 max-h-[600px]"
               key={item.id}
             >
-            
               <figure>
                 <img src={item.img} alt={item.name} />
               </figure>

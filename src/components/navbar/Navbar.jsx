@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { logout } from "../../slices/authSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-
+  const cart = useSelector((state) => state.cart.cart);
+  console.log(cart.length);
   const handleLogout = () => {
     dispatch(logout());
   };
@@ -18,7 +19,10 @@ const Navbar = () => {
           <NavLink to="/home">Home</NavLink>
         </li>
         <li className="flex leading-4 gap-2 cursor-pointer hover:text-white ">
-          <NavLink to="cart">Cart</NavLink>
+          <NavLink to="cart">
+            <span>Cart</span>
+            <span className="py-1 ml-1 px-2 text-white bg-slate-700 rounded-full">{cart.length}</span>
+          </NavLink>
         </li>
         <li className="flex leading-4 gap-2 cursor-pointer hover:text-white ">
           <NavLink onClick={handleLogout} to="/">

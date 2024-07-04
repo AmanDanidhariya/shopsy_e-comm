@@ -5,7 +5,7 @@ import SingleProduct from "./components/singleProduct/SingleProduct";
 import PageNotFound from "./components/pageNotFound/PageNotFound";
 import Navbar from "./components/navbar/Navbar";
 
-//use a lzy function for code splitting
+//use a lazy function for code splitting
 const Home = lazy(() => import("./pages/home/Home"));
 const Signup = lazy(() => import("./pages/signup/Signup"));
 const Login = lazy(() => import("./pages/login/Login"));

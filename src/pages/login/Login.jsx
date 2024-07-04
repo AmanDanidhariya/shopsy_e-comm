@@ -13,8 +13,8 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const defaultValue = {
-    name: "",
-    password: "",
+    name: "aman",
+    password: "123456",
   };
   //get Field values
   const [credentials, setCredentials] = useState(defaultValue);
